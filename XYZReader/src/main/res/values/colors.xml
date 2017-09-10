@@ -16,10 +16,13 @@
 -->
 
 <resources>
-    <color name="photo_placeholder">#ccc</color>
+    <color name="colorTransparent">@android:color/transparent</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorDarkGray">#262626</color>
+    <color name="colorLightGray">#bfbfbf</color>
+    <color name="colorWhite">#ffffff</color>
 
-    <color name="theme_primary">#04561A</color>
-    <color name="theme_primary_dark">#04561A</color>
-    <color name="theme_accent">#04561A</color>
-    <color name="ltgray">#ffe0e0e0</color>
+
 </resources>
