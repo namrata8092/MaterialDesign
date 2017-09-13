@@ -17,28 +17,96 @@
 
 <resources>
 
-    <style name="Theme.Bacon" parent="@style/Theme.AppCompat.Light.NoActionBar">
-
+    <style name="AppTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="Theme.Bacon.Detail">
-        <item name="android:statusBarColor">@android:color/transparent</item>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="card_title" parent="TextAppearance.AppCompat.Subhead">
-        <item name="android:textSize">@dimen/card_sub_title_text_size</item>
+    <style name="CardTitle" parent="TextAppearance.AppCompat.Subhead">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/colorPrimaryDark</item>
         <item name="android:maxLines">4</item>
         <item name="android:ellipsize">end</item>
-        <item name="android:padding">4dp</item>
+        <item name="android:paddingLeft">@dimen/card_left_right_padding</item>
+        <item name="android:paddingRight">@dimen/card_left_right_padding</item>
+        <item name="android:paddingTop">@dimen/card_top_bottom_padding</item>
+        <item name="android:paddingBottom">@dimen/card_top_bottom_padding</item>
     </style>
 
-    <style name="card_msg" parent="TextAppearance.AppCompat.Body1">
-        <item name="android:textSize">@dimen/card_msg_text_size</item>
+    <style name="CardSubTitle" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/colorAccent</item>
-        <item name="android:maxLines">2</item>
+        <item name="android:maxLines">1</item>
         <item name="android:ellipsize">end</item>
-        <item name="android:padding">4dp</item>
+        <item name="android:paddingLeft">@dimen/card_left_right_padding</item>
+        <item name="android:paddingRight">@dimen/card_left_right_padding</item>
+        <item name="android:paddingTop">@dimen/card_top_bottom_padding</item>
+        <item name="android:paddingBottom">@dimen/card_top_bottom_padding</item>
+        <item name="android:singleLine">true</item>
     </style>
+
+    <style name="CardAuthor" parent="TextAppearance.AppCompat.Body2">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:paddingLeft">@dimen/card_left_right_padding</item>
+        <item name="android:paddingRight">@dimen/card_left_right_padding</item>
+        <item name="android:paddingTop">@dimen/card_top_bottom_padding</item>
+        <item name="android:paddingBottom">@dimen/card_top_bottom_padding</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="DetailTitle" parent="@android:style/TextAppearance.Large">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ToolbarTitle" parent="@android:style/TextAppearance.Large">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="authorTitle" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">left|start</item>
+        <item name="android:gravity">left|start</item>
+    </style>
+
+    <style name="articleDate" parent="@android:style/TextAppearance.Small">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_gravity">left|start</item>
+        <item name="android:gravity">left|start</item>
+    </style>
+
+    <style name="articleBody" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/container_margin_top_bottom</item>
+        <item name="android:layout_marginBottom">@dimen/container_margin_top_bottom</item>
+        <item name="android:layout_marginLeft">@dimen/container_margin_left_right</item>
+        <item name="android:layout_marginRight">@dimen/container_margin_left_right</item>
+        <item name="android:padding">20dp</item>
+        <item name="android:autoLink">web</item>
+        <item name="android:linksClickable">true</item>
+    </style>
+
+
 </resources>

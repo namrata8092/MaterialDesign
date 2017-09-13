@@ -1,13 +1,20 @@
 <resources>
     <!-- detail -->
-    <dimen name="card_sub_title_text_size">14sp</dimen>
-    <dimen name="card_msg_text_size">12sp</dimen>
+    <dimen name="card_left_right_padding">10dp</dimen>
+    <dimen name="card_top_bottom_padding">4dp</dimen>
     <dimen name="detail_title_text_size">32sp</dimen>
     <dimen name="detail_body_text_size">22sp</dimen>
     <item name="detail_body_line_spacing_multiplier" format="float" type="fraction">1.25</item>
-
+    <dimen name="container_margin_left_right">15dp</dimen>
+    <dimen name="container_margin_top_bottom">10dp</dimen>
     <dimen name="fab_elevation">2dp</dimen>
     <dimen name="fab_press_translation_z">6dp</dimen>
     <dimen name="fab_margin">24dp</dimen>
-
+    <integer name="grid_column_count">2</integer>
+    <dimen name="list_max_width">380dp</dimen>
+    <dimen name="appbar_height_detail">320dp</dimen>
+    <dimen name="toolbar_height_detail">80dp</dimen>
+    <dimen name="app_bar_margin_negative">-180dp</dimen>
+    <bool name="dual_panel">true</bool>
+    <integer name="list_column_count">2</integer>
 </resources>

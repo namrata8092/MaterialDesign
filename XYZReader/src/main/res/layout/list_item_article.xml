@@ -1,39 +1,34 @@
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="4dp"
-    android:layout_marginRight="4dp"
-    android:layout_marginTop="4dp"
-    android:layout_marginBottom="4dp"
+    android:layout_margin="4dp"
     android:clickable="true"
-    android:focusable="true"
-    android:foreground="?selectableItemBackground">
+    android:focusable="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@android:color/white"
         android:orientation="vertical">
 
+        <!--suppress AndroidLintContentDescription -->
         <com.example.xyzreader.ui.DynamicHeightNetworkImageView
             android:id="@+id/thumbnail"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:padding="4dp"
-            android:scaleType="fitStart"
-            android:background="@color/colorTransparent" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorLightGray" />
 
         <TextView
             android:id="@+id/article_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/card_title"/>
+            style="@style/CardTitle" />
 
         <TextView
             android:id="@+id/article_subtitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/card_msg" />
+            style="@style/CardSubTitle" />
+
+        <TextView
+            android:id="@+id/article_author"
+            style="@style/CardAuthor" />
     </LinearLayout>
 
 </android.support.v7.widget.CardView>
