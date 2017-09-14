@@ -92,16 +92,8 @@ public class ArticleDetailFragment extends Fragment implements
         if (getArguments().containsKey(ARG_ITEM_ID)) {
             mItemId = getArguments().getLong(ARG_ITEM_ID);
         }
-        if(savedInstanceState!=null && savedInstanceState.containsKey(BODY_TEXT_KEY))
-            mBodyText = savedInstanceState.getString(BODY_TEXT_KEY);
     }
 
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        outState.putString(BODY_TEXT_KEY, mBodyText);
-        mBodyText = null;
-        super.onSaveInstanceState(outState);
-    }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -233,11 +225,15 @@ public class ArticleDetailFragment extends Fragment implements
 
     @Override
     public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
+
         return ArticleLoader.newInstanceForItemId(getActivity(), mItemId);
     }
 
+
     @Override
     public void onLoadFinished(Loader<Cursor> cursorLoader, Cursor cursor) {
+
+
         if (cursor == null || cursor.isClosed() || !cursor.moveToFirst()) {
             return;
         }
