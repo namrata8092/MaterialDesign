@@ -74,6 +74,8 @@ public class ArticleDetailFragment extends Fragment implements
     private ImageView mPhotoView;
     private FloatingActionButton mShareFab;
     private String mBodyText;
+    private static final int BUFFER_SIZE = 1000;
+
     public ArticleDetailFragment() {
     }
 
@@ -127,6 +129,14 @@ public class ArticleDetailFragment extends Fragment implements
             slide.setDuration(300);
             getActivity().getWindow().setEnterTransition(slide);
         }
+
+        mToolbar.setNavigationIcon(R.drawable.ic_arrow_back);
+        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().finish();
+            }
+        });
         return mRootView;
     }
 
@@ -157,13 +167,6 @@ public class ArticleDetailFragment extends Fragment implements
                     mTitleView.setText(title);
                     setTextForAccessibility(mTitleView, title);
                 }
-                mToolbar.setNavigationIcon(R.drawable.ic_arrow_back);
-                mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        getActivity().finish();
-                    }
-                });
             }
 
             Date publishedDate = parsePublishedDate();
@@ -204,10 +207,7 @@ public class ArticleDetailFragment extends Fragment implements
             mShareFab.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    startActivity(Intent.createChooser(ShareCompat.IntentBuilder.from(getActivity())
-                            .setType("text/plain")
-                            .setText(mBodyText)
-                            .getIntent(), getString(R.string.action_share)));
+                    shareArticle();
                 }
             });
         } else {
@@ -221,6 +221,21 @@ public class ArticleDetailFragment extends Fragment implements
             setTextForAccessibility(mAuthorView, "N/A");
             setTextForAccessibility(mBodyView, "N/A");
         }
+    }
+
+    private void shareArticle() {
+        String articleData = mBodyView.getText().toString();
+        StringBuilder updatedArticleData = new StringBuilder();
+        if(articleData.length()>BUFFER_SIZE){
+            articleData = articleData.substring(0, BUFFER_SIZE);
+            updatedArticleData.append(articleData).append("... for more information visit application");
+        }else{
+            updatedArticleData.append(articleData);
+        }
+        startActivity(Intent.createChooser(ShareCompat.IntentBuilder.from(getActivity())
+                .setType("text/plain")
+                .setText(updatedArticleData.toString())
+                .getIntent(), getString(R.string.action_share)));
     }
 
     @Override
